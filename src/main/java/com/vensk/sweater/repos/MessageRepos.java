@@ -3,5 +3,8 @@ package com.vensk.sweater.repos;
 import com.vensk.sweater.domain.Message;
 import org.springframework.data.repository.CrudRepository;
 
-public interface MessageRepos extends CrudRepository<Message, Integer> {
+import java.util.List;
+
+public interface MessageRepos extends CrudRepository<Message, Long> {
+    List<Message> findByTag(String tag);
 }
